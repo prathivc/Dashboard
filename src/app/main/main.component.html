@@ -3,9 +3,9 @@
         <div class="header">
             <div class="topnav" id="myTopnav">
                 <div class="menu">
-                    <a [routerLink]="['/home']" class="active">Home</a>
-                    <a [routerLink]="['/about']">About</a>
-                    <a [routerLink]="['/contact']">Contact</a>
+                    <a routerLink="/home" routerLinkActive="active">Home</a>
+                    <a routerLink="/about" routerLinkActive="active">About</a>
+                    <a routerLink="/contact" routerLinkActive="active">Contact</a>
                 </div>
                 <div class="login-div">
                     <a class="" (click)="logout()">Logout</a>
