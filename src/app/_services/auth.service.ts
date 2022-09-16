@@ -23,7 +23,7 @@ export class AuthService {
       this.isAuthenticated = false;
       return false;
     }
-
+    // this.data['email'].value == localStorage.getItem("email") && this.data['password'].value == localStorage.getItem("password")
     private checkCredentials(signInData: SignInData): boolean {
       return this.checkLogin(signInData.getLogin()) && this.checkPassword(signInData.getPassword());
     }

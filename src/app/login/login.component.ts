@@ -64,6 +64,23 @@ export class LoginComponent implements OnInit {
       this.submitted = true;
     }
   }
+  //   onSubmit() {
+  //     if (!this.loginForm.valid) {
+  //       this.isFormValid = true;
+  //       this.areCredentialsInvalid = false;
+  //       return;
+  //     }
+  //     this.checkCredentials(loginForm);
+  
+  //   }
+
+  //   private checkCredentials(loginForm: NgForm) {
+  //   const signInData = new SignInData(loginForm.value.email, loginForm.value.password);
+  //   if (!this.auth.authenticate(signInData)) {
+  //     this.isFormValid = false;
+  //     this.areCredentialsInvalid = true;
+  //   }
+  // }
 
   // onSubmit(loginForm: NgForm) {
   //   if (!loginForm.valid) {

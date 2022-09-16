@@ -22,15 +22,6 @@
                         <mat-error *ngIf="data['password'].errors && data['password'].errors['pattern']">{{pwdErrorMgs}}</mat-error>
                         <mat-error *ngIf="data['password'].errors && data['password'].errors['required']">Password is required</mat-error>
                     </mat-form-field>
-                    
-                
-                    <!-- <div class="form-field password">
-                        <input  [type]="user.showPassword ? 'text' : 'password'" id="password" class="form-control" name="password" placeholder="Password"
-                            required="required" minlength="9" ngModel/>   
-                        <button type="button" class="btn-icon" (click)="user.showPassword = !user.showPassword">
-                            <i class="fa" [ngClass]="{'fa-eye': !user.showPassword, 'fa-eye-slash': user.showPassword}"></i>
-                        </button>                    
-                    </div> -->
                     <div class="form-group mt-4">
                         <button mat-raised-button color="primary">Login</button>
                         <a [routerLink]="['/register']" class="ml-2" mat-button color="#fff">Register</a>
