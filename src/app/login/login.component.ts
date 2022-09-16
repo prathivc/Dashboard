@@ -5,13 +5,13 @@ import { AuthService } from '../_services/auth.service';
 import { SignInData } from '../modal/signIn';
 import { NgForm } from '@angular/forms';
 
-// interface IUser {
-//   name: string;
-//   nickname: string;
-//   email: string;
-//   password: string;
-//   showPassword: boolean;
-// }
+interface IUser {
+  // name: string;
+  // nickname: string;
+  // email: string;
+  // password: string;
+  showPassword: boolean;
+}
 
 @Component({
   selector: 'app-login',
@@ -21,8 +21,8 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
-  // show = false;
-  // user: IUser;
+  show = false;
+  user: IUser;
   email= new FormControl();
   password= new FormControl();
   pwdErrorMgs!: string;
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   isAuthenticated = false;
 
   constructor( private auth: AuthService, private router: Router, private formBuilder: FormBuilder ) {
-    // this.user = {} as IUser;
+    this.user = {} as IUser;
   }
 
   ngOnInit(): void {

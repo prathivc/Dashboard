@@ -14,8 +14,11 @@
                         <mat-error *ngIf="data['email'].errors && data['email'].errors['pattern']">{{emailErrorMgs}}</mat-error>
                     </mat-form-field>
                     <mat-form-field class="w-100">
-                        <input type="password" matInput placeholder="Password" formControlName="password" [pattern]="pwdPattern">
+                        <input [type]="user.showPassword ? 'text' : 'password'" matInput placeholder="Password" formControlName="password" [pattern]="pwdPattern">
                         
+                        <button class="btn-icon col-white login-eye" (click)="user.showPassword = !user.showPassword">
+                            <i class="fa" [ngClass]="{'fa-eye': !user.showPassword, 'fa-eye-slash': user.showPassword}"></i>
+                        </button>
                         <mat-error *ngIf="data['password'].errors && data['password'].errors['pattern']">{{pwdErrorMgs}}</mat-error>
                         <mat-error *ngIf="data['password'].errors && data['password'].errors['required']">Password is required</mat-error>
                     </mat-form-field>

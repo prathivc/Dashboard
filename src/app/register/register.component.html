@@ -14,16 +14,31 @@
                     <mat-error *ngIf="data['email'].errors && data['email'].errors['required']">Email is required</mat-error>
                     <mat-error *ngIf="data['email'].errors && data['email'].errors['pattern']">{{emailErrorMgs}}</mat-error>
                 </mat-form-field>
-                <mat-form-field class="w-100">
-                    <input type="password" matInput placeholder="Password" formControlName="password" [pattern]="pwdPattern">
-                    <mat-error *ngIf="data['password'].errors && data['password'].errors['required']">Password is required</mat-error>
-                    <mat-error *ngIf="data['password'].errors && data['password'].errors['pattern']">{{pwdErrorMgs}}</mat-error>
-                </mat-form-field>
-                <mat-form-field class="w-100">
-                    <input type="password" matInput placeholder="Confirm Password" formControlName="cnfPassword" [pattern]="cnfPwdPattern">
-                    <mat-error *ngIf="data['cnfPassword'].errors && data['cnfPassword'].errors['required']">Password is required</mat-error>
-                    <mat-error *ngIf="data['cnfPassword'].errors && data['cnfPassword'].errors['pattern']">{{cnfPwdErrMgs}}</mat-error>
-                </mat-form-field>
+
+                <!-- <div class="" ngModelGroup="passwordGrp" #passwords="ngModelGroup" appCheckPassword> -->
+                    <mat-form-field class="w-100">
+                        <input [type]="user.showPassword ? 'text' : 'password'" matInput placeholder="Password" formControlName="password" [pattern]="pwdPattern">
+                        
+                        <button class="btn-icon col-white login-eye" (click)="user.showPassword = !user.showPassword">
+                            <i class="fa" [ngClass]="{'fa-eye': !user.showPassword, 'fa-eye-slash': user.showPassword}"></i>
+                        </button>
+                        <mat-error *ngIf="data['password'].errors && data['password'].errors['required']">Password is required</mat-error>
+                        <mat-error *ngIf="data['password'].errors && data['password'].errors['pattern']">{{pwdErrorMgs}}</mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="w-100">
+                        <input [type]="user.showCnfPassword ? 'text' : 'password'" matInput placeholder="Confirm Password" formControlName="cnfPassword" [pattern]="cnfPwdPattern">
+                        
+                        <button class="btn-icon col-white login-eye" (click)="user.showCnfPassword = !user.showCnfPassword">
+                            <i class="fa" [ngClass]="{'fa-eye': !user.showCnfPassword, 'fa-eye-slash': user.showCnfPassword}"></i>
+                        </button>
+                        <mat-error *ngIf="data['cnfPassword'].errors && data['cnfPassword'].errors['required']">Password is required</mat-error>
+                        <mat-error *ngIf="data['cnfPassword'].errors && data['cnfPassword'].errors['pattern']">{{cnfPwdErrMgs}}</mat-error>
+                    </mat-form-field>
+                <!-- </div> -->
+                <!-- <div *ngIf="passwordGrp.errors?.passwordCheck && (password.dirty || cnfPassword.touched)"
+                    class="alert alert-danger">
+                    Passwords do not match.
+                </div> -->
                 <div class="mt-4">
                     <button mat-raised-button color="primary">Register</button>
                     <a [routerLink]="['/login']" class="ml-2" mat-button color="#fff">Cancel</a>

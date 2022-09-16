@@ -6,6 +6,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 
+interface IUser {
+  showPassword: boolean;
+  showCnfPassword: boolean;
+}
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -22,8 +27,12 @@ export class RegisterComponent implements OnInit {
   emailErrorMgs!: string;
   cnfPwdPattern!: string;
   cnfPwdErrMgs!: string;
+  show = false;
+  user: IUser;
   
-  constructor(private formBuilder: FormBuilder, private router: Router, private _snackBar: MatSnackBar) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private _snackBar: MatSnackBar) {
+    this.user = {} as IUser;
+  }
 
   ngOnInit() {
     this.pwdPattern =
@@ -39,7 +48,11 @@ export class RegisterComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
       password: new FormControl('', [Validators.required, Validators.pattern(this.pwdPattern)]),
       cnfPassword: new FormControl('', [Validators.required, Validators.pattern(this.cnfPwdPattern)])
-    });
+    }, 
+    // {
+    //   validators: this.password.bind(this)
+    // }
+    );
   }
 
   get data() { return this.registerForm.controls; }
@@ -62,5 +75,11 @@ export class RegisterComponent implements OnInit {
       console.log(localStorage.getItem("cnfPassword"));
     }
   }
+
+  // password(formGroup: FormGroup) {
+  //   const { value: password } = formGroup.get('password');
+  //   const { value: confirmPassword } = formGroup.get('confirmpassword');
+  //   return password === confirmPassword ? null : { passwordNotMatch: true };
+  // }
 
 }
