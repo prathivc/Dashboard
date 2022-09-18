@@ -33,6 +33,8 @@
                         </button>
                         <mat-error *ngIf="data['cnfPassword'].errors && data['cnfPassword'].errors['required']">Password is required</mat-error>
                         <mat-error *ngIf="data['cnfPassword'].errors && data['cnfPassword'].errors['pattern']">{{cnfPwdErrMgs}}</mat-error>
+                        
+                        <!-- <mat-error *ngIf="data['cnfPassword'].errors && data['cnfPassword'].errors['mustMatch']">Passwords must match</mat-error> -->
                     </mat-form-field>
                 <!-- </div> -->
                 <!-- <div *ngIf="passwordGrp.errors?.passwordCheck && (password.dirty || cnfPassword.touched)"

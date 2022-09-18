@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-import { AuthService } from '../_services/auth.service';
-import { emailValidator } from '../_services/email-validator.directive';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MustMatch } from '../_services/must-match';
 
 
 interface IUser {
@@ -48,10 +47,10 @@ export class RegisterComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
       password: new FormControl('', [Validators.required, Validators.pattern(this.pwdPattern)]),
       cnfPassword: new FormControl('', [Validators.required, Validators.pattern(this.cnfPwdPattern)])
-    }, 
-    // {
-    //   validators: this.password.bind(this)
-    // }
+    }
+  //   , {
+  //     validator: MustMatch('password', 'cnfPwdPattern')
+  // }
     );
   }
 

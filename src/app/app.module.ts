@@ -21,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatIconModule } from '@angular/material/icon';
     MainComponent,
     RegisterComponent,
     EmailValidatorDirective,
-    AlertComponent
+    AlertComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
