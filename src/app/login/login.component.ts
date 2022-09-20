@@ -59,46 +59,19 @@ export class LoginComponent implements OnInit {
       
       console.log(localStorage.getItem("email"));
       console.log(localStorage.getItem("password"));
-      this.router.navigate(['/home']);
+      this.checkCredentials(this.loginForm);
     } else {  
       this.submitted = true;
     }
   }
-  //   onSubmit() {
-  //     if (!this.loginForm.valid) {
-  //       this.isFormValid = true;
-  //       this.areCredentialsInvalid = false;
-  //       return;
-  //     }
-  //     this.checkCredentials(loginForm);
-  
-  //   }
 
-  //   private checkCredentials(loginForm: NgForm) {
-  //   const signInData = new SignInData(loginForm.value.email, loginForm.value.password);
-  //   if (!this.auth.authenticate(signInData)) {
-  //     this.isFormValid = false;
-  //     this.areCredentialsInvalid = true;
-  //   }
-  // }
-
-  // onSubmit(loginForm: NgForm) {
-  //   if (!loginForm.valid) {
-  //     this.isFormValid = true;
-  //     this.areCredentialsInvalid = false;
-  //     return;
-  //   }
-  //   this.checkCredentials(loginForm);
-
-  // }
-
-  // private checkCredentials(loginForm: NgForm) {
-  //   const signInData = new SignInData(loginForm.value.login, loginForm.value.password);
-  //   if (!this.auth.authenticate(signInData)) {
-  //     this.isFormValid = false;
-  //     this.areCredentialsInvalid = true;
-  //   }
-  // }
+  private checkCredentials(loginForm: FormGroup<any>) {
+    const signInData = new SignInData(loginForm.value.email, loginForm.value.password);
+    if (!this.auth.authenticate(signInData)) {
+      this.isFormValid = false;
+      this.areCredentialsInvalid = true;
+    }
+  }
 
   signUp() {
     this.isAuthenticated = false;

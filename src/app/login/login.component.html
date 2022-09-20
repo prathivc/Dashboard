@@ -1,36 +1,110 @@
-<div id="bg"></div>
+<div class="container-fluid">
+    <div class="forms-container">
+        <div class="signin-signup">
+            <div class="alert alert-danger alert-pos" role="alert" *ngIf="submitted">
+                Username or password is incorrect
+            </div>
+            <form class="sign-in-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <h2 class="title">Login</h2>
+                <mat-form-field class="w-100 input-field">
+                    <!-- <span class="mail-icon"><i class="fa fa-envelope-o"></i></span> -->
+                    <input type="text" matInput placeholder="Email" formControlName="email" [pattern]="emailPattern">
+                    <mat-error *ngIf="data['email'].errors && data['email'].errors['required']">Email is required
+                    </mat-error>
+                    <mat-error *ngIf="data['email'].errors && data['email'].errors['pattern']">{{emailErrorMgs}}
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="w-100 input-field">
+                    <input [type]="user.showPassword ? 'text' : 'password'" matInput placeholder="Password"
+                        formControlName="password" [pattern]="pwdPattern">
+
+                    <button class="btn-icon col-white login-eye" (click)="user.showPassword = !user.showPassword">
+                        <i class="fa" [ngClass]="{'fa-eye': !user.showPassword, 'fa-eye-slash': user.showPassword}"></i>
+                    </button>
+                    <mat-error *ngIf="data['password'].errors && data['password'].errors['pattern']">{{pwdErrorMgs}}
+                    </mat-error>
+                    <mat-error *ngIf="data['password'].errors && data['password'].errors['required']">Password is
+                        required</mat-error>
+                </mat-form-field>
+                <div class="form-group mt-4">
+                    <button class="px-4" mat-raised-button color="primary">Login</button>
+                    <!-- <a [routerLink]="['/register']" mat-button color="#fff">Sign Up</a> -->
+                </div>
+                <p class="social-text">Or Sign in with social platforms</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fa fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fa fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+                <h3>New here ?</h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
+                    ex ratione. Aliquid!
+                </p>
+                <button class="btn transparent" [routerLink]="['/register']" id="sign-up-btn">
+                    Sign up
+                </button>
+            </div>
+            <img src="../../assets/img/log.svg" class="image" alt="" />
+        </div>
+    </div>
+</div>
+
+<!-- <div id="bg"></div>
 <div class="login-page">
     <div class="">
         <div class="bg-text">
             <div class="alert alert-danger" role="alert" *ngIf="submitted">
-              Username or password is incorrect
+                Username or password is incorrect
             </div>
             <mat-card>
                 <h3 class="text-center">Login</h3>
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                     <mat-form-field class="w-100">
-                        <input type="text" matInput placeholder="Email" formControlName="email" [pattern]="emailPattern">
-                        <mat-error *ngIf="data['email'].errors && data['email'].errors['required']">Email is required</mat-error>
-                        <mat-error *ngIf="data['email'].errors && data['email'].errors['pattern']">{{emailErrorMgs}}</mat-error>
+                        <input type="text" matInput placeholder="Email" formControlName="email"
+                            [pattern]="emailPattern">
+                        <mat-error *ngIf="data['email'].errors && data['email'].errors['required']">Email is required
+                        </mat-error>
+                        <mat-error *ngIf="data['email'].errors && data['email'].errors['pattern']">{{emailErrorMgs}}
+                        </mat-error>
                     </mat-form-field>
                     <mat-form-field class="w-100">
-                        <input [type]="user.showPassword ? 'text' : 'password'" matInput placeholder="Password" formControlName="password" [pattern]="pwdPattern">
-                        
+                        <input [type]="user.showPassword ? 'text' : 'password'" matInput placeholder="Password"
+                            formControlName="password" [pattern]="pwdPattern">
+
                         <button class="btn-icon col-white login-eye" (click)="user.showPassword = !user.showPassword">
-                            <i class="fa" [ngClass]="{'fa-eye': !user.showPassword, 'fa-eye-slash': user.showPassword}"></i>
+                            <i class="fa"
+                                [ngClass]="{'fa-eye': !user.showPassword, 'fa-eye-slash': user.showPassword}"></i>
                         </button>
-                        <mat-error *ngIf="data['password'].errors && data['password'].errors['pattern']">{{pwdErrorMgs}}</mat-error>
-                        <mat-error *ngIf="data['password'].errors && data['password'].errors['required']">Password is required</mat-error>
+                        <mat-error *ngIf="data['password'].errors && data['password'].errors['pattern']">{{pwdErrorMgs}}
+                        </mat-error>
+                        <mat-error *ngIf="data['password'].errors && data['password'].errors['required']">Password is
+                            required</mat-error>
                     </mat-form-field>
                     <div class="form-group mt-4">
-                        <button mat-raised-button color="primary">Login</button>
-                        <a [routerLink]="['/register']" class="ml-2" mat-button color="#fff">Register</a>
+                        <button class="me-2" mat-raised-button color="primary">Login</button>
+                        <a [routerLink]="['/register']" mat-button color="#fff">Register</a>
                     </div>
                 </form>
             </mat-card>
         </div>
     </div>
-</div>
+</div> -->
 
 
 
