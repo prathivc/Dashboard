@@ -1,0 +1,13 @@
+.mat-form-field {
+    width: 100%;
+
+    &.mat-form-field-appearance-legacy {
+        .mat-form-field-label {
+            color: #8b8b8b;
+        }
+
+        .mat-form-field-underline {
+            background-color: #9b9b9b;
+        }
+    }
+}

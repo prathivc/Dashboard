@@ -1,0 +1,33 @@
+.profile-left,
+.profile-right {
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+    padding: 15px;
+}
+
+.profile-left {
+    .profile-img-wrp {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        border: 1px solid #e1e1e1;
+        padding: 5px;
+
+        .profile-img {
+            border-radius: 50%;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .profile-details {
+        span {
+            font-weight: 500;
+            color: #0c0c0c;
+        }
+    }
+}

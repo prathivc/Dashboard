@@ -1,0 +1,106 @@
+<app-main></app-main>
+<div class="container py-3">
+    <div class="row my-5">
+        <div class="col-3">
+            <div class="profile-left">
+                <div class="profile-img-wrp">
+                    <img [src]="user?.picture?.large" class="profile-img">
+                </div>
+                <div class="profile-details">
+                    <p><span>Name</span> {{ user?.name?.title }}. {{ user?.name?.first }}
+                        {{ user?.name?.last }}</p>
+                    <p><span>DOB</span> {{ user?.dob?.date | date}}</p>
+                    <p><span>Age</span> {{ user?.dob?.age }}</p>
+                    <p><span>Gender</span> {{ user?.gender }}</p>
+                    <p><span>Mobile</span> {{ user?.cell }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="profile-right">
+                <form>
+                    <div class="row">
+                        <div class="col-4">
+                            <mat-form-field>
+                                <mat-label>ID</mat-label>
+                                <input matInput readonly> {{ user?.id?.value }}
+                            </mat-form-field>
+                        </div>
+                        <div class="col-4">
+                            <mat-form-field>
+                                <mat-label>Registered at the age</mat-label>
+                                <input matInput readonly> {{ user?.registered.age }}
+                            </mat-form-field>
+                        </div>
+                        <div class="col-4">
+                            <mat-form-field>
+                                <mat-label>Registered On</mat-label>
+                                <input matInput readonly> {{ user?.registered.date | date }}
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <mat-form-field>
+                                <mat-label>Cell</mat-label>
+                                <input matInput readonly> {{ user?.cell }}
+                            </mat-form-field>
+                        </div>
+                        <div class="col-4">
+                            <mat-form-field>
+                                <mat-label>Phone</mat-label>
+                                <input matInput readonly>{{ user?.phone }}
+                            </mat-form-field>
+                        </div>
+                        <div class="col-4">
+                            <mat-form-field>
+                                <mat-label>Email</mat-label>
+                                <input matInput readonly> {{ user?.email }}
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <mat-form-field>
+                                <mat-label>Street Number</mat-label>
+                                <input matInput readonly> {{ user?.location?.street?.number }}
+                            </mat-form-field>
+                        </div>
+                        <div class="col-4">
+                            <mat-form-field>
+                                <mat-label>Street Name</mat-label>
+                                <input matInput readonly> {{ user?.location?.street?.name }}
+                            </mat-form-field>
+                        </div>
+                        <div class="col-4">
+                            <mat-form-field>
+                                <mat-label>City</mat-label>
+                                <input matInput readonly>{{ user?.location?.city }}
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <mat-form-field>
+                                <mat-label>State</mat-label>
+                                <input matInput readonly> {{ user?.location?.state }}
+                            </mat-form-field>
+                        </div>
+                        <div class="col-4">
+                            <mat-form-field>
+                                <mat-label>Country</mat-label>
+                                <input matInput readonly> {{ user?.location?.country }}
+                            </mat-form-field>
+                        </div>
+                        <div class="col-4">
+                            <mat-form-field>
+                                <mat-label>Postcode</mat-label>
+                                <input matInput readonly> {{ user?.location?.postcode }}
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
