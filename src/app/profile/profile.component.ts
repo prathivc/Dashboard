@@ -10,6 +10,7 @@ import { UserService } from '../_services/user.service';
 export class ProfileComponent implements OnInit {
   @Input('user') data: any;
   user: any;
+  generatedNumber: any;
 
   constructor(
     private _userService: UserService, private _snackBar: MatSnackBar) { 
@@ -26,6 +27,8 @@ export class ProfileComponent implements OnInit {
     );}
 
   ngOnInit(): void {
+    this.generatedNumber = Math.floor(100000 * Math.random());
+    console.log("Generated Number" + " - " + this.generatedNumber);
   }
 
 }
