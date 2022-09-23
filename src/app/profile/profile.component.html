@@ -5,6 +5,9 @@
             <div class="profile-left">
                 <div class="profile-img-wrp">
                     <img [src]="user?.picture?.large" class="profile-img">
+                    <div class="camera-icon-wrp">
+                        <img src="../../assets/img/camera-icon.png"/>
+                    </div>
                 </div>
                 <div class="profile-details">
                     <p><span>Name</span> {{ user?.name?.title }}. {{ user?.name?.first }}

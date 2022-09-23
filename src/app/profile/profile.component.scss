@@ -7,6 +7,8 @@
 }
 
 .profile-left {
+    position: relative;
+    
     .profile-img-wrp {
         height: 150px;
         width: 150px;
@@ -24,7 +26,26 @@
         }
     }
 
+    .camera-icon-wrp {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #c2185b;
+        position: absolute;
+        right: 68px;
+        top: 130px;
+        padding: 6px;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
     .profile-details {
+        margin-top: 15px;
+
         span {
             font-weight: 500;
             color: #0c0c0c;

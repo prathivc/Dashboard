@@ -15,31 +15,29 @@ body {
 
 .topnav {
     overflow: hidden;
-    background-color: #000000;
+    background-color: #fdfdfd;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
 }
   
 .topnav .menu a,
 .topnav .login-div a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: #6e6e6e;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
     cursor: pointer;
+    font-weight: 500;
 }
   
 .topnav .menu a:hover,
-.topnav .login-div a:hover {
-    background-color: #e10000;
-    color: white;
-}
-  
+.topnav .login-div a:hover,
 .topnav .menu a.active,
 .topnav .login-div a.active {
-    background-color: #e10000;
-    color: white;
+    color: #c2185b;
+    font-weight: 500;
 }
   
 .topnav .menu .icon,
