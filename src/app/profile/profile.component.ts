@@ -12,8 +12,16 @@ export class ProfileComponent implements OnInit {
   user: any;
   generatedNumber: any;
 
-  constructor(
-    private _userService: UserService, private _snackBar: MatSnackBar) { 
+  constructor(private _userService: UserService, private _snackBar: MatSnackBar) { 
+
+  }
+
+  ngOnInit(): void {
+    this.loadProfile();
+    this.randomNumGenerate();
+  }
+
+  loadProfile() {
     this._userService.getUser().subscribe(
       (data: any) => {
         this.user = data.results[0];
@@ -24,9 +32,11 @@ export class ProfileComponent implements OnInit {
           duration: 2000,
         });
       }
-    );}
+    );
+    this.randomNumGenerate();
+  }
 
-  ngOnInit(): void {
+  randomNumGenerate() {
     this.generatedNumber = Math.floor(100000 * Math.random());
     console.log("Generated Number" + " - " + this.generatedNumber);
   }

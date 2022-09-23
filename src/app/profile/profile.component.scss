@@ -28,6 +28,14 @@
         span {
             font-weight: 500;
             color: #0c0c0c;
+            width: 57px;
+            display: inline-block;
+
+            &::after {
+                content: ":";
+                padding-right: 5px;
+                float: right;
+            }
         }
     }
 }
