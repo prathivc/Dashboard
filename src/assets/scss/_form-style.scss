@@ -9,5 +9,11 @@
         .mat-form-field-underline {
             background-color: #9b9b9b;
         }
+
+        &.mat-form-field-disabled {
+            .mat-form-field-underline {
+                border-bottom: 1px solid #9b9b9b;
+            }
+        }
     }
 }
